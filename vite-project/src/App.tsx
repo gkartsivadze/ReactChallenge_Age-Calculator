@@ -1,33 +1,21 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+const [years,setYears] = useState(0);
+const [months,setMonths] = useState(0);
+const [days,setDays] = useState(0);
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div className='grid-container'>
+      <label>DAY<input type="number" placeholder='DD'/></label>
+      <p>This field is required</p>
+      <label>MONTH<input type="number" placeholder='MM'/></label>
+      <label>YEAR<input type="number" placeholder='YYYY'/></label>
+    </div>
+    <h1>{years || "--"} years</h1>
+    <h1>{months || "--"} months</h1>
+    <h1>{days || "--"} days</h1>
     </>
   )
 }
