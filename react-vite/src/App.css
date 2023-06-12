@@ -20,6 +20,10 @@ html {
     font-family: "Poppins", sans-serif;
 }
 
+#root {
+    padding: 5rem;
+}
+
 input {
     font-size: 32px;
 }
