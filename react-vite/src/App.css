@@ -20,8 +20,22 @@ html {
     font-family: "Poppins", sans-serif;
 }
 
+body {
+    min-height: 100vh;
+    background-color: var(--o-white);
+    display: grid;
+    place-items: center;
+}
+
 #root {
     padding: 5rem;
+    width: max-content;
+    background-color: var(--white);
+    border-radius: 3rem 3rem 20rem 3rem;
+}
+
+.err-txt {
+    color: var(--error);
 }
 
 input {
@@ -29,8 +43,46 @@ input {
 }
 
 .grid-container {
-    width: 300px;
     display: grid;
+    padding-right: 8rem;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
+}
+
+
+.field-name {
+    font-weight: 800;
+    font-style: normal;
+}
+.grid-container input {
+    width: 8rem;
+    border: 1px solid var(--l-grey);
+    padding: 0.5rem;
+    border-radius: 5px;
+    display: block;
+}
+
+.purple-txt {
+    color: var(--purple);
+}
+
+.btn {
+    border-radius: 50%;
+    border: none;
+    padding: 1rem;
+    background-color: var(--purple);
+    flex: 0 0 max-content;
+}
+
+hr {
+    flex: 1 1 auto;
+}
+
+.flex-row {
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    font-size: 5rem;
 }

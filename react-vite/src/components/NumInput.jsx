@@ -11,14 +11,14 @@ function NumInput({fullName, curFormat, passValue, syncChange}) {
     }
     return (
         <div>
-            <label>{fullName.toUpperCase()}</label>
+            <label className="field-name">{fullName.toUpperCase()}</label>
             <input  name={fullName}
                     onChange={syncChange}
                     type="number"
                     placeholder={curFormat}
                     value={passValue}
                     max={calcMax(fullName)} />
-          <p>{"" == null ? "This field is required" : "Must be valid day"}</p>
+          <p className="err-txt">{"" == null ? "This field is required" : "Must be valid day"}</p>
         </div>
     )
 }
