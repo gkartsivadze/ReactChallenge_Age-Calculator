@@ -39,11 +39,33 @@ body {
 }
 
 input {
-    font-size: 32px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    width: 6rem;
+    border: 1px solid var(--l-grey);
+    padding: 0.5rem;
+    border-radius: 5px;
+    display: block;
+}
+
+input:focus {
+    outline-color: var(--purple);
+}
+
+/* remove arrows from inputs */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 .grid-container {
     display: grid;
+    place-items: center;
     padding-right: 8rem;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
@@ -53,13 +75,6 @@ input {
 .field-name {
     font-weight: 800;
     font-style: normal;
-}
-.grid-container input {
-    width: 8rem;
-    border: 1px solid var(--l-grey);
-    padding: 0.5rem;
-    border-radius: 5px;
-    display: block;
 }
 
 .purple-txt {
@@ -72,6 +87,11 @@ input {
     padding: 1rem;
     background-color: var(--purple);
     flex: 0 0 max-content;
+    box-shadow: 0 0 0.1rem black;
+    transition: background-color 0.2s;
+}
+.btn:hover {
+    background-color:var(--o-black)
 }
 
 hr {
@@ -81,8 +101,48 @@ hr {
 .flex-row {
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 h1 {
     font-size: 5rem;
+}
+
+@media (max-width: 830px) {
+    #root {
+        padding: 5rem 2.5rem;
+    }
+    .flex-row {
+        justify-content: center;
+        align-items: center;
+        padding-top: 1rem;
+    }
+    .flex-row hr {
+        position: absolute;
+        top: 50%;
+        left: 0; right: 0;
+    }
+    .btn {
+        z-index: 1;
+    }
+    .grid-container {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 650px) {
+    html {
+        font-size: 12px;
+    }
+}
+@media (max-width: 460px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    html {
+        font-size: 8px;
+    }
 }

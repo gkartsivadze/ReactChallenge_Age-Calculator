@@ -9,6 +9,11 @@ function NumInput({fullName, curFormat, passValue, syncChange}) {
                 return 2023;
         }
     }
+    const styling = {
+        opacity: passValue == '' ? '1' : '0',
+        width: "10rem",
+        fontSize: "0.9rem"
+    }
     return (
         <div>
             <label className="field-name">{fullName.toUpperCase()}</label>
@@ -17,8 +22,8 @@ function NumInput({fullName, curFormat, passValue, syncChange}) {
                     type="number"
                     placeholder={curFormat}
                     value={passValue}
-                    max={calcMax(fullName)} />
-          <p className="err-txt">{"" == null ? "This field is required" : "Must be valid day"}</p>
+            />
+          <p style={styling} className="err-txt">{"This field is required"}</p>
         </div>
     )
 }
